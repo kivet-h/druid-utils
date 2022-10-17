@@ -1,4 +1,4 @@
-class DrUtils {
+class DruidUtils {
     /**
      * 获取字符串字节长度, UTF-8 1个汉字3个字节
      * @param str 数据
@@ -9,8 +9,19 @@ class DrUtils {
         const CHINESE_REG = /[^\u0000-\u00ff]/g
         return str.replace(CHINESE_REG, replaceVal ? replaceVal : 'aaa').length
     }
+
+    /**
+     * 转千分位
+     * @param number
+     */
+    public toLocalString(number: number) {
+        if (!number) {
+            return '0'
+        }
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
 }
 
-const drUtils = new DrUtils()
+const drUtils = new DruidUtils()
 
 export default drUtils
