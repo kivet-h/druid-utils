@@ -1,0 +1,16 @@
+class DrUtils {
+    /**
+     * 获取字符串字节长度, UTF-8 1个汉字3个字节
+     * @param str 数据
+     * @param replaceVal 字节长度，一个汉字对应n个字节
+     */
+    public getByteSize(str: string, replaceVal?: string) {
+        if (!str) return 0
+        const CHINESE_REG = /[^\u0000-\u00ff]/g
+        return str.replace(CHINESE_REG, replaceVal ? replaceVal : 'aaa').length
+    }
+}
+
+const drUtils = new DrUtils()
+
+export default drUtils

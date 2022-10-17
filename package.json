@@ -1,8 +1,8 @@
 {
-    "name": "dr-map-l1",
+    "name": "druid-utils",
     "version": "0.0.1",
     "license": "MIT",
-    "description": "druid-lib",
+    "description": "druid-utils",
     "devDependencies": {
         "@babel/cli": "^7.18.10",
         "@babel/core": "^7.18.13",
@@ -64,15 +64,14 @@
         "webpack-merge": "^5.8.0"
     },
     "dependencies": {
-        "@types/mapbox-gl": "^2.7.5",
         "antd": "^4.22.8",
-        "mapbox-gl": "^2.10.0",
+        "query-string": "^7.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "scripts": {
-        "build": "yarn build-js && yarn build-css && yarn build-type",
-        "build-js": "cross-env NODE_ENV=production rollup -c",
+        "build": "yarn build-js && yarn build-type",
+        "build-js": "rm -rf dist && cross-env NODE_ENV=production rollup -c",
         "build-type": "rm -rf dist/types && tsc -b ./tsconfig.types.json",
         "build-css": "postcss -o dist/style/index.css src/assets/style/style.css",
         "dev": "cross-env NODE_ENV=development BASE_ENV=development webpack-dev-server -c config/webpack.dev.js"

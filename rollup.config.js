@@ -10,10 +10,14 @@ import copy from 'rollup-plugin-copy'
 const env = process.env.NODE_ENV
 
 const config =  {
-    input: path.resolve(__dirname, 'src/index.ts'),
+    input: [
+        path.resolve(__dirname, 'src/index-utils.ts'),
+         path.resolve(__dirname, 'src/index-hooks.ts')
+    ],
     output: [
         {
-            file: pkg.main,
+            // file: pkg.main,
+            dir: 'dist',
             format: 'cjs'
         },
         // {
@@ -64,7 +68,7 @@ const config =  {
     ],
     // 告诉rollup不要将此lodash打包，而作为外部依赖
     external: [
-        'mapbox-gl'
+        'react', 'antd', 'query-string'
     ]
 };
 
