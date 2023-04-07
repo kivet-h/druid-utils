@@ -68,7 +68,7 @@ const config =  {
     ],
     // 告诉rollup不要将此lodash打包，而作为外部依赖
     external: [
-        'react', 'antd', 'query-string', 'dayjs'
+        'react', 'antd', 'query-string', 'dayjs', 'axios'
     ]
 };
 

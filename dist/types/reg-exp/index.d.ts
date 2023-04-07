@@ -32,6 +32,10 @@ declare class DrRegExp {
      */
     readonly Email: RegExp;
     /**
+     * 匹配电话号码
+     */
+    readonly PhoneNumber: RegExp;
+    /**
      * 匹配匹配长度在min~max长度的字符串
      * @param val 字字符串
      * @param min 字符串长度限制
