@@ -93,5 +93,8 @@
         "> 1%",
         "iOS 7",
         "last 3 iOS versions"
-    ]
+    ],
+    "publishConfig": {
+        "kivet-h:registry": "https://npm.pkg.github.com"
+    }
 }
